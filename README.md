@@ -17,7 +17,7 @@ sniffio version: 1.3.1
 
 tokenizers version: 0.21.4
 
-sentencepiece version: 0.2.1.
+SentencePiece version: 0.2.1.
 
 GPU: NVIDIA A800 80GB GPU
 
