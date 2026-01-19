@@ -1,5 +1,5 @@
-# multi_round_conversation
-The total trace of multi-round conversation.
+# Interactive conversation workload
+The total trace of interactive conversation workload.
 Format:
 User_id, Timestamp(seconds), Query_length, Response_length, Round_index.  
 
