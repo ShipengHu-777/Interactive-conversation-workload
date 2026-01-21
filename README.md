@@ -33,19 +33,31 @@ PCIe version: PCIe 4.0
 
 1. Download the docker image: nvcr.io/nvidia/pytorch:23.10-py3, and download vLLM repository.
 
-2. Run image: docker run --gpus all -it --ipc=host -v /data/test:/app -d nvcr.io/nvidia/pytorch:23.10-py3 /bin/bash
+2. Run image:
+```
+docker run --gpus all -it --ipc=host -v /data/test:/app -d nvcr.io/nvidia/pytorch:23.10-py3 /bin/bash
+```
 
-3. Run docker: docker exec -it ea91dfe3a6c9 /bin/bash
+4. Run docker:
+```
+docker exec -it ea91dfe3a6c9 /bin/bash
+```
 
-4. Enter vLLM repository and Install dependicies: 
+6. Enter vLLM repository and Install dependicies: 
 
+```
 pip install -r requirements.txt -i https://mirrors.ustc.edu.cn/pypi/web/simple
-
+```
+```
 pip install -e . -i https://mirrors.ustc.edu.cn/pypi/web/simple
+```
 
 5. Put the trace_llm_engine_demo.py under the "engine" folder of vLLM.
 
-6. Run the trace: python trace_entry.py --model /app/opt-13b/
+6. Run the trace:
+```
+python trace_entry.py --model /app/opt-13b/
+```
 
 The script will capture the arrival time of each request and the return time of each request. Each request’s latency and the average latency will be printed. 
 
