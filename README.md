@@ -45,7 +45,7 @@ To get the number of interaction rounds of each user's multi-round conversation,
 python3 conversation_round.py
 ```
 
-2. Observation 2
+### Observation 2
 
 To get the weighted reuse distances of KV accesses, run:
 ```
@@ -57,14 +57,14 @@ To get the hit rate of difference eviction policies, run:
 python3 hit_rate.py
 ```
 
-3. Observation 3
+### Observation 3
 
 To validate the large variability of KV loading, run:
 ```
 python3 load_key_value_variation.py
 ```
 
-4. Getting the relation between the weighted reuse distance lower bound and the model answer length (figure 12).
+### Getting the relation between the weighted reuse distance lower bound and the model answer length (figure 12).
 To get the relation between 8:00-9:00, run:
 ```
 python3 output_rd_relation_8_00.py
@@ -114,7 +114,7 @@ To get the relation between 19:00-20:00, run:
 python3 output_rd_relation_19_00.py
 ```
 
-5. To get the hit rate of the optimal evition policy and exiting policies with different weighted reuse distances (figure 13), run:
+### To get the hit rate of the optimal evition policy and exiting policies with different weighted reuse distances (figure 13), run:
 ```
 python3 hit_rate_to_rd.py
 ```
