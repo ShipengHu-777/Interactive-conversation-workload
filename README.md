@@ -33,7 +33,7 @@ PCIe version: PCIe 4.0
 # Demonstrating key observations in the paper
 We provide a large number of easy-to-run python scripts to analyze our workload and reproduce the key observations in our paper. To run these scripts, put these scripts into the folder of "total_worload".
 
-1. Observation 1
+## Observation 1 
 
 To get the conversatioin duration of each user's multi-round conversation, run:
 ```
