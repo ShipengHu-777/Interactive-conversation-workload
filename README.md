@@ -35,7 +35,7 @@ We provide a large number of easy-to-run python scripts to analyze our workload 
 
 ### Observation 1 
 
-To get the conversatioin duration of each user's multi-round conversation, run:
+To get the conversation duration of each user's multi-round conversation, run:
 ```
 python3 conversation_duration.py
 ```
