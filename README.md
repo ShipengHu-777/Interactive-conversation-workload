@@ -37,12 +37,12 @@ We provide a large number of easy-to-run python scripts to analyze our workload 
 
 To get the conversatioin duration of each user's multi-round conversation, run:
 ```
-python3 conversation duration
+python3 conversation_duration.py
 ```
 
 To get the number of interaction rounds of each user's multi-round conversation, run:
 ```
-python3 conversation round
+python3 conversation_round.py
 ```
 
 2. Observation 2
