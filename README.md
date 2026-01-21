@@ -114,7 +114,7 @@ To get the relation between 19:00-20:00, run:
 python3 output_rd_relation_19_00.py
 ```
 
-### To get the hit rate of the optimal evition policy and exiting policies with different weighted reuse distances (figure 13), run:
+### To get the hit rate of the optimal eviction policy and exiting policies with different weighted reuse distances (figure 13), run:
 ```
 python3 hit_rate_to_rd.py
 ```
