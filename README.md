@@ -134,7 +134,7 @@ docker run --gpus all -it --ipc=host -v /data/test:/app -d nvcr.io/nvidia/pytorc
 docker exec -it ea91dfe3a6c9 /bin/bash
 ```
 
-4. Enter vLLM repository and Install dependicies: 
+4. Enter vLLM repository and install dependencies: 
 
 ```
 pip install -r requirements.txt -i https://mirrors.ustc.edu.cn/pypi/web/simple
