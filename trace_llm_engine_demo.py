@@ -56,7 +56,9 @@ class RequestTracker:
             self.total_finished_req+=1
 
             request_serve_time_stamp.pop(request_id)
-            del running_request_record[request_id]            
+            del running_request_record[request_id]
+            print("Request "+str(request_id)+" returns, latency is ",cur_latency)
+            print("The average latency is ",self.total_latency/self.total_finished_req)            
             self.abort_request(request_id)
             return running_request_record
   
@@ -225,6 +227,7 @@ class TraceLLMEngine:
 
         self._request_tracker = RequestTracker()
         self.listoflines=[]
+        self.user_history={}
         
 
 
@@ -322,14 +325,17 @@ class TraceLLMEngine:
         
 
         start_time=time.time()
-        f=open("sampled_traces.txt","r")
+        trace_file="traces.txt"
+        f=open(trace_file,"r")
+        print("Start reading trace file.")
         self.listoflines=f.readlines()
         f.close()
+        print("Finish reading trace file, the total request number is ",len(self.listoflines)).
         request_counter=1
         issue_time=0
         has_requests_in_progress = False
         
-  
+        print("Start replaying the trace.")
         while True:
             now_time=time.time()
             has_requests_in_progress, end_flag, request_counter = self.process_trace_file(request_counter,start_time,now_time)
@@ -345,13 +351,19 @@ class TraceLLMEngine:
         issue_time=0
         while 1:
             if request_counter>=len(self.listoflines):
+                print("Finish replaying all the traces.")
                 return add_trace_flag,True,request_counter
 
             line=self.listoflines[request_counter]
             line=line[:len(line)-1]
             split_list=line.split()
             request_id=request_counter
-            input_len = int(split_list[2])
+            if split_list[0] in self.user_history:
+                input_len = int(split_list[2]) + self.user_history[split_list[0]]
+                self.user_history[split_list[0]] += (int(split_list[2])+int(split_list[3]))
+            else:
+                input_len = int(split_list[2])
+                self.user_history[split_list[0]] = (int(split_list[2])+int(split_list[3]))
 
             input_token_num=input_len
             input_token_ids=[]
