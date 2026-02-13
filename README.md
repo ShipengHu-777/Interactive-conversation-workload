@@ -17,7 +17,7 @@ sniffio version: 1.3.1
 
 tokenizers version: 0.21.4
 
-SentencePiece version: 0.2.1.
+SentencePiece version: 0.2.1
 
 GPU: NVIDIA A800 80GB GPU
 
@@ -139,7 +139,7 @@ pip install -e . -i https://mirrors.ustc.edu.cn/pypi/web/simple
 
 6. Run the trace:
 ```
-python trace_entry.py --model /app/opt-13b/
+python trace_entry_demo.py --model /app/opt-13b/
 ```
 
 The script will capture the arrival time of each request and the return time of each request. Each request’s latency and the average latency will be printed. 
