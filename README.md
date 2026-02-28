@@ -21,17 +21,11 @@ SentencePiece version: 0.2.1
 
 GPU: NVIDIA A800 80GB GPU
 
-Host memory: 200GB
-
-CPU: Intel Xeon Platinum 8358 CPU
-
-Linux version: Ubuntu 22.04.5
-
 PCIe version: PCIe 4.0
 
 
 # Demonstrating key observations in the paper
-We provide python scripts to analyze our workload and reproduce the key observations in our paper. To run these scripts, put these scripts into the folder of "total_workload".
+We provide python scripts to analyze our workload. To run these scripts, put these scripts into the folder of "total_workload".
 
 ### Observation 1 
 
@@ -112,7 +106,9 @@ python3 output_rd_relation_19_00.py
 
 
 
-# The execution commands and expected outputs
+# The execution commands and expected outputs 
+
+Implementing your own scripts to run the trace is more recommended due to different versions of vLLM (the version of vLLM used here is rather old).
 
 1. Download the docker image: nvcr.io/nvidia/pytorch:23.10-py3, and download vLLM repository.
 
@@ -140,22 +136,6 @@ pip install -e . -i https://mirrors.ustc.edu.cn/pypi/web/simple
 6. Run the trace:
 ```
 python trace_entry_demo.py --model /app/opt-13b/
-```
-
-The script will capture the arrival time of each request and the return time of each request. Each request’s latency and the average latency will be printed. 
-
-The expected output:
-
-```
-Start reading trace file.
-Finish reading trace file, the total request number is xxx.
-Start replaying the trace.
-Request 1 returns, latency is xx
-The average latency is xx
-Request 2 returns, latency is xx
-The average latency is xx
-……
-Finish replaying all the traces.
 ```
 
 For different user arrival rates, conduct simple user sampling and adjust sampling ratios on the workload.
