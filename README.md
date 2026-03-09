@@ -54,61 +54,16 @@ To validate the large variability of KV loading, run:
 python3 load_key_value_variation.py
 ```
 
-### Getting the relation between the weighted reuse distance lower bound and the model answer length (figure 12).
-To get the relation between 8:00-9:00, run:
+To get the observation of the WRD lower bound, run:
 ```
-python3 output_rd_relation_8_00.py
-```
-To get the relation between 9:00-10:00, run:
-```
-python3 output_rd_relation_9_00.py
-```
-To get the relation between 10:00-11:00, run:
-```
-python3 output_rd_relation_10_00.py
-```
-To get the relation between 11:00-12:00, run:
-```
-python3 output_rd_relation_11_00.py
-```
-To get the relation between 12:00-13:00, run:
-```
-python3 output_rd_relation_12_00.py
-```
-To get the relation between 13:00-14:00, run:
-```
-python3 output_rd_relation_13_00.py
-```
-To get the relation between 14:00-15:00, run:
-```
-python3 output_rd_relation_14_00.py
-```
-To get the relation between 15:00-16:00, run:
-```
-python3 output_rd_relation_15_00.py
-```
-To get the relation between 16:00-17:00, run:
-```
-python3 output_rd_relation_16_00.py
-```
-To get the relation between 17:00-18:00, run:
-```
-python3 output_rd_relation_17_00.py
-```
-To get the relation between 18:00-19:00, run:
-```
-python3 output_rd_relation_18_00.py
-```
-To get the relation between 19:00-20:00, run:
-```
-python3 output_rd_relation_19_00.py
+python3 output_rd_relation.py
 ```
 
 
 
-# The execution commands and expected outputs 
+# The scripts to run the trace
 
-Implementing your own scripts to run the trace is more recommended due to different versions of vLLM (the version of vLLM used here is rather old).
+It is more recommended to re-implement your own scripts to run the trace, due to different versions of vLLM (the version of vLLM used here is rather old).
 
 1. Download the docker image: nvcr.io/nvidia/pytorch:23.10-py3, and download vLLM repository.
 
