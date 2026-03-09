@@ -95,7 +95,7 @@ def persist_rd_sort_list_last_round_token(sort_list_last_round_token,summarized_
 
 
 
-# ten minute trace during 8:00-9:00
+
 def main():
     trace_file="total_traces_part1.txt"
     f=open(trace_file,"r")
@@ -142,3 +142,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
